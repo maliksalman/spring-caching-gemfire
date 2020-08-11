@@ -1,0 +1,25 @@
+plugins {
+	id 'org.springframework.boot' version '2.3.2.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+	id 'java'
+}
+
+group = 'com.smalik'
+version = '1.0-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+	maven{
+		credentials {
+			username "smalik@pivotal.io"
+			password ""
+		}
+		url "https://commercial-repo.pivotal.io/data3/gemfire-release-repo/gemfire"
+	}
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.geode:spring-gemfire-starter:1.3.2.RELEASE'
+}
