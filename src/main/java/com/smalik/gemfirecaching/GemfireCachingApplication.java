@@ -6,17 +6,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.data.gemfire.config.annotation.EnableCachingDefinedRegions;
+import org.springframework.data.gemfire.config.annotation.EnableEviction;
 import org.springframework.data.gemfire.config.annotation.EnableExpiration;
+import org.springframework.data.gemfire.config.annotation.EnableStatistics;
+import org.springframework.data.gemfire.eviction.EvictionActionType;
 import org.springframework.data.gemfire.expiration.ExpirationActionType;
 
 @SpringBootApplication
-@EnableExpiration(policies = {
-		@EnableExpiration.ExpirationPolicy(
-				timeout=15,
-				action=ExpirationActionType.INVALIDATE,
-				regionNames="my-beans",
-				types=EnableExpiration.ExpirationType.TIME_TO_LIVE)
-})
+@EnableStatistics
 public class GemfireCachingApplication {
 
 	public static void main(String[] args) {
