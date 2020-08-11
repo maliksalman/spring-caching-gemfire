@@ -12,8 +12,8 @@ repositories {
 	mavenCentral()
 	maven{
 		credentials {
-			username "smalik@pivotal.io"
-			password ""
+			username "$pivotalMavenUsername"
+			password "$pivotalMavenPassword"
 		}
 		url "https://commercial-repo.pivotal.io/data3/gemfire-release-repo/gemfire"
 	}
